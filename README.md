@@ -1,4 +1,4 @@
-# analise-criminal-sentinel
+# analise-criminal-sentinel [ desenvolvendo ]
 
 - Introdução ao projeto, objetivo da análise e breve descrição dos dados.
 - Informações sobre a fonte dos dados e links para os arquivos originais.
