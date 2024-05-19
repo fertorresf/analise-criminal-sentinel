@@ -7,6 +7,7 @@
 - Contribuições e informações para colaboração.
 
 # data/:
+- Dados mensais exportados do portal https://www.ssp.sp.gov.br/estatistica/dados-mensais
 - raw/: Arquivos brutos baixados dos sites oficiais (ex: OcorrenciaMensal(Criminal)-Lins_20240518_144046.xlsx, etc).
 - processed/: Arquivos processados e limpos (ex: dados_limpos.csv).
 # code/:
