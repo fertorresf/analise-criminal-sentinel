@@ -13,6 +13,43 @@
 # code/:
 - base_main.py É o arquivo principal que chama as funções dos outros pacotes e realiza a análise completa.
 - relatorio_anual.py Contém funções para gerar o relatório anual em PDF com os resultados da análise.
+
+  Função gerar_relatorio_anual(df, modelo):
+
+   Gera um relatório anual em PDF com os resultados da análise, incluindo informações gerais, gráficos da análise exploratória, informações sobre o modelo preditivo e informações sobre a clusterização (se disponível).
+
+  Parâmetros:
+
+   df (pd.DataFrame): DataFrame com os dados limpos e pré-processados.
+   modelo (sklearn.linear_model.LinearRegression): Modelo de regressão linear treinado.
+
+  Passos:
+
+   Criar o PDF:
+
+    Cria um objeto FPDF para gerar o PDF.
+    Adiciona uma página e define a fonte e o título do relatório.
+
+   Adicionar Informações Gerais:
+
+    Adiciona informações sobre o ano dos dados.
+
+   Adicionar Gráficos da Análise Exploratória:
+
+    Utiliza PdfPages para adicionar os gráficos gerados na realizar_analise_exploratoria ao PDF.
+
+   Adicionar Informações sobre o Modelo Preditivo:
+
+    Adiciona informações sobre o R² do modelo.
+
+   Adicionar Informações sobre a Clusterização:
+
+    Adiciona informações sobre os clusters (se disponíveis) e suas características.
+
+   Salvar o PDF:
+
+    Salva o PDF com o nome "reports/relatorio_anual.pdf".
+  
 - cleaning/: Scripts para a limpeza e organização dos dados (ex: limpar_dados.py).
   - limpar_dados.py: Contém funções para limpar e pré-processar os dados brutos.
 
