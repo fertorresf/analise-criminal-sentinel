@@ -41,18 +41,18 @@ analise-criminal-sentinel/ <br>
 │ │ └── limpar_dados.py <br>
 │ ├── base_main.py <br>
 │ ├── relatorio_anual.py <br>
-│ └── visualization/ <br>
-│ ├── plots/ <br>
-│ │ └── grafico_ocorrencias.png <br>
 ├── data/ <br>
+│ ├── processed/ <br>
+│ │ └── dados_limpos.csv <br>
 │ ├── raw/ <br>
 │ │ └── OcorrenciaMensal(Criminal)-Lins_20240518_144046.xlsx <br>
 │ │ ... <br>
-│ ├── processed/ <br>
-│ │ └── dados_limpos.csv <br>
 ├── documentation/ <br>
 │ ├── reports/ <br>
 │ │ └── relatorio_anual.pdf <br>
+│ └── visualization/ <br>
+│ ├── plots/ <br>
+│ │ └── grafico_ocorrencias.png <br>
 
 ## Descrição dos Arquivos
 
