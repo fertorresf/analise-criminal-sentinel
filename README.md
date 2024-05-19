@@ -16,6 +16,7 @@
   - limpar_dados.py: Contém funções para limpar e pré-processar os dados brutos. 
 - analysis/: Scripts para análise exploratória e modelagem (ex: analise_exploratoria.py, modelo_preditivo.py).
   - analise_exploratoria.py: Contém funções para análise exploratória e visualização dos dados.
+
     Função realizar_analise_exploratoria:
       Recebe o DataFrame com os dados limpos e pré-processados como argumento.
 
