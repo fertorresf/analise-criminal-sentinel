@@ -21,18 +21,18 @@
 
       Realiza os seguintes tipos de análise:
 
-      - Distribuição de Ocorrências:
-       - Cria gráficos de barras para visualizar o total de ocorrências por mês, trimestre e categoria de crime.
+      Distribuição de Ocorrências:
+       Cria gráficos de barras para visualizar o total de ocorrências por mês, trimestre e categoria de crime.
 
-      - Tendências:
-       - Cria gráficos de linhas para observar a tendência de ocorrências por mês e por trimestre.
+      Tendências:
+       Cria gráficos de linhas para observar a tendência de ocorrências por mês e por trimestre.
 
-      - Correlação:
-       - Cria uma matriz de correlação e utiliza um mapa de calor para visualizar a força da correlação entre as variáveis.
+      Correlação:
+       Cria uma matriz de correlação e utiliza um mapa de calor para visualizar a força da correlação entre as variáveis.
 
-      - Ocorrências por Tipo de Crime:
-       - Cria um gráfico de barras para visualizar o número de ocorrências por tipo de crime.
-       - Exibe os gráficos utilizando plt.show().
+      Ocorrências por Tipo de Crime:
+       Cria um gráfico de barras para visualizar o número de ocorrências por tipo de crime.
+       Exibe os gráficos utilizando plt.show().
          
   - modelo_preditivo.py: Contém funções para criar e avaliar modelos preditivos.  
 # visualization/:
