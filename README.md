@@ -32,27 +32,27 @@ Contribuições para este projeto são bem-vindas! Se você tiver interesse em c
 
 ## Estrutura do Repositório
 
-analise-criminal-sentinel/
-├── data/
-│ ├── raw/
-│ │ └── OcorrenciaMensal(Criminal)-Lins_20240518_144046.xlsx
-│ │ ...
-│ └── processed/
-│ | └── dados_limpos.csv
-├── code/
-│ ├── base_main.py
-│ ├── relatorio_anual.py
-│ ├── cleaning/
-│ │ └── limpar_dados.py
-│ ├── analysis/
-│ │ ├── analise_exploratoria.py
-│ │ └── modelo_preditivo.py
-│ └── visualization/
-│ └── plots/
-│ └── grafico_ocorrencias.png
-└── documentation/
-| └── reports/
-| | └── relatorio_anual.pdf
+analise-criminal-sentinel/ \n
+├── data/ \n
+│ ├── raw/ \n
+│ │ └── OcorrenciaMensal(Criminal)-Lins_20240518_144046.xlsx \n
+│ │ ... \n
+│ └── processed/ \n
+│ | └── dados_limpos.csv \n
+├── code/ \n
+│ ├── base_main.py \n
+│ ├── relatorio_anual.py \n
+│ ├── cleaning/ \n
+│ │ └── limpar_dados.py \n
+│ ├── analysis/ \n
+│ │ ├── analise_exploratoria.py \n
+│ │ └── modelo_preditivo.py \n
+│ └── visualization/ \n
+│ └── plots/ \n
+│ └── grafico_ocorrencias.png \n
+└── documentation/ \n
+| └── reports/ \n
+| | └── relatorio_anual.pdf \n
 
 ## Descrição dos Arquivos
 
