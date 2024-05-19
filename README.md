@@ -1,3 +1,58 @@
+# analise-criminal-sentinel [desenvolvendo]
+
+## Introdução
+
+Este repositório contém um projeto de análise de dados de ocorrências criminais em Lins, SP. O objetivo é analisar os dados, identificar padrões e tendências, e gerar insights para auxiliar na compreensão da criminalidade na cidade.
+
+## Descrição dos Dados
+
+Os dados utilizados neste projeto são dados mensais de ocorrências criminais coletados do portal da Secretaria da Segurança Pública do Estado de São Paulo ([https://www.ssp.sp.gov.br/estatistica/dados-mensais](https://www.ssp.sp.gov.br/estatistica/dados-mensais)). Os dados abrangem o período de 2024 e incluem informações sobre o tipo de crime, o mês da ocorrência e o total de ocorrências.
+
+## Ferramentas e Bibliotecas
+
+O projeto utiliza as seguintes bibliotecas Python:
+
+* **pandas:** Para manipulação e análise de dados.
+* **matplotlib:** Para criação de gráficos.
+* **seaborn:** Para visualização de dados estatísticos.
+* **scipy:** Para testes estatísticos.
+* **scikit-learn:** Para criação de modelos preditivos.
+* **fpdf:** Para geração de relatórios em PDF.
+
+## Exemplos de Visualizações e Insights
+
+* **Gráfico de barras:**  Mostrando o total de ocorrências por mês.
+* **Gráfico de linhas:**  Demonstrando a tendência de ocorrências ao longo do ano.
+* **Matriz de correlação:**  Analisando a relação entre diferentes tipos de crime.
+* **Modelo de regressão linear:**  Prevendo o número total de ocorrências em cada mês.
+
+## Contribuições e Colaboração
+
+Contribuições para este projeto são bem-vindas! Se você tiver interesse em colaborar, entre em contato com o autor do projeto ou abra um issue no repositório.
+
+## Estrutura do Repositório
+
+analise-criminal-sentinel/
+├── data/
+│ ├── raw/
+│ │ └── OcorrenciaMensal(Criminal)-Lins_20240518_144046.xlsx
+│ │ ...
+│ └── processed/
+│ | └── dados_limpos.csv
+├── code/
+│ ├── base_main.py
+│ ├── relatorio_anual.py
+│ ├── cleaning/
+│ │ └── limpar_dados.py
+│ ├── analysis/
+│ │ ├── analise_exploratoria.py
+│ │ └── modelo_preditivo.py
+│ └── visualization/
+│ └── plots/
+│ └── grafico_ocorrencias.png
+└── documentation/
+| └── reports/
+| | └── relatorio_anual.pdf
 
 ## Descrição dos Arquivos
 
