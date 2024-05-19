@@ -10,10 +10,13 @@
 - raw/: Arquivos brutos baixados dos sites oficiais (ex: OcorrenciaMensal(Criminal)-Lins_20240518_144046.xlsx, etc).
 - processed/: Arquivos processados e limpos (ex: dados_limpos.csv).
 # code/:
-- base_main.py
-- relatorio_anual.py
+- base_main.py É o arquivo principal que chama as funções dos outros pacotes e realiza a análise completa.
+- relatorio_anual.py Contém funções para gerar o relatório anual em PDF com os resultados da análise.
 - cleaning/: Scripts para a limpeza e organização dos dados (ex: limpar_dados.py).
+  - limpar_dados.py: Contém funções para limpar e pré-processar os dados brutos. 
 - analysis/: Scripts para análise exploratória e modelagem (ex: analise_exploratoria.py, modelo_preditivo.py).
+  - analise_exploratoria.py: Contém funções para análise exploratória e visualização dos dados.
+  - modelo_preditivo.py: Contém funções para criar e avaliar modelos preditivos.  
 # visualization/:
 - plots/: Gráficos e visualizações criadas (ex: grafico_ocorrencias.png).
 # documentation/:
