@@ -32,9 +32,9 @@ Contribuições para este projeto são bem-vindas! Se você tiver interesse em c
 
 ## Estrutura do Repositório
 
-analise-criminal-sentinel/ \n
-├── data/ \n
-│ ├── raw/ \n
+analise-criminal-sentinel/ <br>
+├── data/ <br>
+│ ├── raw/ <br>
 │ │ └── OcorrenciaMensal(Criminal)-Lins_20240518_144046.xlsx \n
 │ │ ... \n
 │ └── processed/ \n
