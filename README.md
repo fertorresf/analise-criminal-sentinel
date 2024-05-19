@@ -124,4 +124,5 @@ Cria e avalia um modelo de regressão linear para prever o número total de ocor
 
 2. Execução da Análise:
 
+   ```bash
    python code/base_main.py
