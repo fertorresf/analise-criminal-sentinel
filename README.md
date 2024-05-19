@@ -64,7 +64,39 @@
        Cria um gráfico de barras para visualizar o número de ocorrências por tipo de crime.
        Exibe os gráficos utilizando plt.show().
          
-  - modelo_preditivo.py: Contém funções para criar e avaliar modelos preditivos.  
+  - modelo_preditivo.py: Contém funções para criar e avaliar modelos preditivos.
+
+    Função criar_modelo_preditivo(df):
+
+     Cria e avalia um modelo de regressão linear para prever o número total de ocorrências em cada mês, com base nos dados históricos.
+
+    Parâmetros:
+
+     df (pd.DataFrame): DataFrame com os dados limpos e pré-processados.
+
+    Passos:
+
+     Preparar os Dados:
+
+      Separa as colunas que representam os meses (Janeiro a Dezembro) como variáveis explicativas (X).
+      Separa a coluna "Total_Ocorrencias" como variável resposta (y).
+
+      Criar o Modelo:
+
+       Cria um modelo de regressão linear usando LinearRegression().
+
+      Treinar o Modelo:
+
+       Treina o modelo com os dados X e y utilizando model.fit(X, y).
+
+      Avaliar o Modelo:
+
+       Calcula o R² do modelo (coeficiente de determinação) para avaliar o quão bem o modelo se ajusta aos dados.
+
+      Retorna o Modelo:
+
+       Retorna o modelo de regressão linear treinado.
+
 # visualization/:
 - plots/: Gráficos e visualizações criadas (ex: grafico_ocorrencias.png).
 # documentation/:
