@@ -17,9 +17,9 @@
 - analysis/: Scripts para análise exploratória e modelagem (ex: analise_exploratoria.py, modelo_preditivo.py).
   - analise_exploratoria.py: Contém funções para análise exploratória e visualização dos dados.
     - Função realizar_analise_exploratoria:
-      - Recebe o DataFrame com os dados limpos e pré-processados como argumento.
+      Recebe o DataFrame com os dados limpos e pré-processados como argumento.
 
-      - Realiza os seguintes tipos de análise:
+      Realiza os seguintes tipos de análise:
 
       - Distribuição de Ocorrências:
        - Cria gráficos de barras para visualizar o total de ocorrências por mês, trimestre e categoria de crime.
