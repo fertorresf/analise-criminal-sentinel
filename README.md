@@ -1,143 +1,127 @@
-# analise-criminal-sentinel [ desenvolvendo ]
 
-- Introdução ao projeto, objetivo da análise e breve descrição dos dados.
-- Informações sobre a fonte dos dados e links para os arquivos originais.
-- Descrição das ferramentas e bibliotecas usadas no projeto.
-- Exemplos de visualizações e insights obtidos da análise.
-- Contribuições e informações para colaboração.
+## Descrição dos Arquivos
 
-# data/:
-- Dados mensais exportados do portal https://www.ssp.sp.gov.br/estatistica/dados-mensais
-- raw/: Arquivos brutos baixados dos sites oficiais (ex: OcorrenciaMensal(Criminal)-Lins_20240518_144046.xlsx, etc).
-- processed/: Arquivos processados e limpos (ex: dados_limpos.csv).
-# code/:
-- base_main.py É o arquivo principal que chama as funções dos outros pacotes e realiza a análise completa.
-- relatorio_anual.py Contém funções para gerar o relatório anual em PDF com os resultados da análise.
+### `code/base_main.py`
 
-  Função gerar_relatorio_anual(df, modelo):
+É o arquivo principal que chama as funções dos outros pacotes e realiza a análise completa.
 
-   Gera um relatório anual em PDF com os resultados da análise, incluindo informações gerais, gráficos da análise exploratória, informações sobre o modelo preditivo e informações sobre a clusterização (se disponível).
+### `code/relatorio_anual.py`
 
-  Parâmetros:
+Contém funções para gerar o relatório anual em PDF com os resultados da análise.
 
-   df (pd.DataFrame): DataFrame com os dados limpos e pré-processados.
-   modelo (sklearn.linear_model.LinearRegression): Modelo de regressão linear treinado.
+**Função `gerar_relatorio_anual(df, modelo)`:**
 
-  Passos:
+Gera um relatório anual em PDF com os resultados da análise, incluindo informações gerais, gráficos da análise exploratória, informações sobre o modelo preditivo e informações sobre a clusterização (se disponível).
 
-   Criar o PDF:
+**Parâmetros:**
 
-    Cria um objeto FPDF para gerar o PDF.
-    Adiciona uma página e define a fonte e o título do relatório.
+* `df (pd.DataFrame)`: DataFrame com os dados limpos e pré-processados.
+* `modelo (sklearn.linear_model.LinearRegression)`: Modelo de regressão linear treinado.
 
-   Adicionar Informações Gerais:
+**Passos:**
 
-    Adiciona informações sobre o ano dos dados.
+1. **Criar o PDF:**
+   * Cria um objeto `FPDF` para gerar o PDF.
+   * Adiciona uma página e define a fonte e o título do relatório.
 
-   Adicionar Gráficos da Análise Exploratória:
+2. **Adicionar Informações Gerais:**
+   * Adiciona informações sobre o ano dos dados.
 
-    Utiliza PdfPages para adicionar os gráficos gerados na realizar_analise_exploratoria ao PDF.
+3. **Adicionar Gráficos da Análise Exploratória:**
+   * Utiliza `PdfPages` para adicionar os gráficos gerados na `realizar_analise_exploratoria` ao PDF.
 
-   Adicionar Informações sobre o Modelo Preditivo:
+4. **Adicionar Informações sobre o Modelo Preditivo:**
+   * Adiciona informações sobre o R² do modelo.
 
-    Adiciona informações sobre o R² do modelo.
+5. **Adicionar Informações sobre a Clusterização:**
+   * Adiciona informações sobre os clusters (se disponíveis) e suas características.
 
-   Adicionar Informações sobre a Clusterização:
+6. **Salvar o PDF:**
+   * Salva o PDF com o nome "reports/relatorio_anual.pdf".
 
-    Adiciona informações sobre os clusters (se disponíveis) e suas características.
+### `code/cleaning/limpar_dados.py`
 
-   Salvar o PDF:
+Contém funções para limpar e pré-processar os dados brutos.
 
-    Salva o PDF com o nome "reports/relatorio_anual.pdf".
-  
-- cleaning/: Scripts para a limpeza e organização dos dados (ex: limpar_dados.py).
-  - limpar_dados.py: Contém funções para limpar e pré-processar os dados brutos.
+**Função `limpar_dados(path)`:**
 
-     Função limpar_dados(path):
+Esta função é responsável por carregar, limpar e pré-processar os dados brutos.
 
-      Esta função é responsável por carregar, limpar e pré-processar os dados brutos.
+**Parâmetros:**
 
-      Parâmetros:
-       path (str): Caminho para a pasta com os arquivos brutos.
+* `path (str)`: Caminho para a pasta com os arquivos brutos.
 
-      Passos:
-    
-       Carregar os Dados:
-    
-        Lê os arquivos Excel da pasta especificada no path.
-        Concatena os DataFrames em um único DataFrame (df_total).
+**Passos:**
 
-      Limpar os Dados:
+1. **Carregar os Dados:**
+   * Lê os arquivos Excel da pasta especificada no `path`.
+   * Concatena os DataFrames em um único DataFrame (`df_total`).
 
-       Remove colunas irrelevantes (como as que contam o número de vítimas).
-       Renomeia colunas para facilitar a manipulação e leitura dos dados.
-       Substitui vírgulas por pontos para que os valores numéricos sejam lidos corretamente.
-       Converte as colunas para o tipo numérico usando pd.to_numeric.
-       Trata valores faltantes (NaN) substituindo-os por zero.
-       Cria uma coluna "Ano" para indicar o ano das ocorrências.
+2. **Limpar os Dados:**
+   * Remove colunas irrelevantes (como as que contam o número de vítimas).
+   * Renomeia colunas para facilitar a manipulação e leitura dos dados.
+   * Substitui vírgulas por pontos para que os valores numéricos sejam lidos corretamente.
+   * Converte as colunas para o tipo numérico usando `pd.to_numeric`.
+   * Trata valores faltantes (NaN) substituindo-os por zero.
+   * Cria uma coluna "Ano" para indicar o ano das ocorrências.
 
-      Retorna o DataFrame:
+3. **Retorna o DataFrame:**
+   * Retorna o DataFrame com os dados limpos e pré-processados.
 
-       Retorna o DataFrame com os dados limpos e pré-processados.
-    
-- analysis/: Scripts para análise exploratória e modelagem (ex: analise_exploratoria.py, modelo_preditivo.py).
-  - analise_exploratoria.py: Contém funções para análise exploratória e visualização dos dados.
+### `code/analysis/analise_exploratoria.py`
 
-    Função realizar_analise_exploratoria:
-      Recebe o DataFrame com os dados limpos e pré-processados como argumento.
+Contém funções para análise exploratória e visualização dos dados.
 
-      Realiza os seguintes tipos de análise:
+**Função `realizar_analise_exploratoria`:**
 
-      Distribuição de Ocorrências:
-       Cria gráficos de barras para visualizar o total de ocorrências por mês, trimestre e categoria de crime.
+Recebe o DataFrame com os dados limpos e pré-processados como argumento.
 
-      Tendências:
-       Cria gráficos de linhas para observar a tendência de ocorrências por mês e por trimestre.
+Realiza os seguintes tipos de análise:
 
-      Correlação:
-       Cria uma matriz de correlação e utiliza um mapa de calor para visualizar a força da correlação entre as variáveis.
+* **Distribuição de Ocorrências:** Cria gráficos de barras para visualizar o total de ocorrências por mês, trimestre e categoria de crime.
+* **Tendências:** Cria gráficos de linhas para observar a tendência de ocorrências por mês e por trimestre.
+* **Correlação:** Cria uma matriz de correlação e utiliza um mapa de calor para visualizar a força da correlação entre as variáveis.
+* **Ocorrências por Tipo de Crime:** Cria um gráfico de barras para visualizar o número de ocorrências por tipo de crime.
 
-      Ocorrências por Tipo de Crime:
-       Cria um gráfico de barras para visualizar o número de ocorrências por tipo de crime.
-       Exibe os gráficos utilizando plt.show().
-         
-  - modelo_preditivo.py: Contém funções para criar e avaliar modelos preditivos.
+Exibe os gráficos utilizando `plt.show()`.
 
-    Função criar_modelo_preditivo(df):
+### `code/analysis/modelo_preditivo.py`
 
-     Cria e avalia um modelo de regressão linear para prever o número total de ocorrências em cada mês, com base nos dados históricos.
+Contém funções para criar e avaliar modelos preditivos.
 
-    Parâmetros:
+**Função `criar_modelo_preditivo(df)`:**
 
-     df (pd.DataFrame): DataFrame com os dados limpos e pré-processados.
+Cria e avalia um modelo de regressão linear para prever o número total de ocorrências em cada mês, com base nos dados históricos.
 
-    Passos:
+**Parâmetros:**
 
-     Preparar os Dados:
+* `df (pd.DataFrame)`: DataFrame com os dados limpos e pré-processados.
 
-      Separa as colunas que representam os meses (Janeiro a Dezembro) como variáveis explicativas (X).
-      Separa a coluna "Total_Ocorrencias" como variável resposta (y).
+**Passos:**
 
-      Criar o Modelo:
+1. **Preparar os Dados:**
+   * Separa as colunas que representam os meses (Janeiro a Dezembro) como variáveis explicativas (`X`).
+   * Separa a coluna "Total_Ocorrencias" como variável resposta (`y`).
 
-       Cria um modelo de regressão linear usando LinearRegression().
+2. **Criar o Modelo:**
+   * Cria um modelo de regressão linear usando `LinearRegression()`.
 
-      Treinar o Modelo:
+3. **Treinar o Modelo:**
+   * Treina o modelo com os dados `X` e `y` utilizando `model.fit(X, y)`.
 
-       Treina o modelo com os dados X e y utilizando model.fit(X, y).
+4. **Avaliar o Modelo:**
+   * Calcula o R² do modelo (coeficiente de determinação) para avaliar o quão bem o modelo se ajusta aos dados.
 
-      Avaliar o Modelo:
+5. **Retorna o Modelo:**
+   * Retorna o modelo de regressão linear treinado.
 
-       Calcula o R² do modelo (coeficiente de determinação) para avaliar o quão bem o modelo se ajusta aos dados.
+## Instalação e Execução
 
-      Retorna o Modelo:
+1. **Instalação das Bibliotecas:**
 
-       Retorna o modelo de regressão linear treinado.
+   ```bash
+   pip install -r requirements.txt
 
-# visualization/:
-- plots/: Gráficos e visualizações criadas (ex: grafico_ocorrencias.png).
-# documentation/:
-- reports/: Relatórios com insights e conclusões da análise (ex: relatorio_anual.pdf).
-# requirements.txt: Lista das bibliotecas usadas no projeto.
-Certifique-se de instalar as bibliotecas listadas no requirements.txt usando pip install -r requirements.txt.
-Execute o script code/base_main.py para rodar a análise completa e gerar o relatório.
+2. Execução da Análise:
+
+   python code/base_main.py
