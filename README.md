@@ -14,7 +14,35 @@
 - base_main.py É o arquivo principal que chama as funções dos outros pacotes e realiza a análise completa.
 - relatorio_anual.py Contém funções para gerar o relatório anual em PDF com os resultados da análise.
 - cleaning/: Scripts para a limpeza e organização dos dados (ex: limpar_dados.py).
-  - limpar_dados.py: Contém funções para limpar e pré-processar os dados brutos. 
+  - limpar_dados.py: Contém funções para limpar e pré-processar os dados brutos.
+
+     Função limpar_dados(path):
+
+      Esta função é responsável por carregar, limpar e pré-processar os dados brutos.
+
+      Parâmetros:
+       path (str): Caminho para a pasta com os arquivos brutos.
+
+      Passos:
+    
+       Carregar os Dados:
+    
+        Lê os arquivos Excel da pasta especificada no path.
+        Concatena os DataFrames em um único DataFrame (df_total).
+
+      Limpar os Dados:
+
+       Remove colunas irrelevantes (como as que contam o número de vítimas).
+       Renomeia colunas para facilitar a manipulação e leitura dos dados.
+       Substitui vírgulas por pontos para que os valores numéricos sejam lidos corretamente.
+       Converte as colunas para o tipo numérico usando pd.to_numeric.
+       Trata valores faltantes (NaN) substituindo-os por zero.
+       Cria uma coluna "Ano" para indicar o ano das ocorrências.
+
+      Retorna o DataFrame:
+
+       Retorna o DataFrame com os dados limpos e pré-processados.
+    
 - analysis/: Scripts para análise exploratória e modelagem (ex: analise_exploratoria.py, modelo_preditivo.py).
   - analise_exploratoria.py: Contém funções para análise exploratória e visualização dos dados.
 
